@@ -1,9 +1,15 @@
-# Iklim
-* Iklim is a program to check the weather condition of a city in the next 5 days.
+# Weather App
+* Weather App is a program to check the weather condition of a selected country in the next 5 days.
 
 ## Usage
 * Make sure to have Python3 installed.
 * Make sure to have the required modules installed from requirements.txt.
+* Make sure to insert the API_KEY(OpenWeatherApp) in the app.py file(line 17).
+```Python
+	def search():
+		country = request.args.get("country")
+		API_KEY = "Enter api key"
+```
 * Install geckodriver and then change the executable_path inside "test.py" into where the geckodriver lives.
 ```Python
 class MyWebsiteTest(unittest.TestCase):
@@ -11,7 +17,7 @@ class MyWebsiteTest(unittest.TestCase):
         # Change the path to where the geckodriver file exists
         self.browser = webdriver.Firefox(executable_path=r"C:\Users\fifia\Desktop\geckodriver.exe")
 ```
-* Then, on the terminal, run the flask application
+* Then, on the terminal, run the flask application by typing
 ```bash
 flask run
 ```
@@ -20,6 +26,3 @@ flask run
 ```bash
 python test.py
 ```
-
-## Tutorial Video
-[Watch Here!](https://youtu.be/NNs6hKHFXwA)
