@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Weather App
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Select a country:</h2>
+        <form action="/search" method="get">
+            <select name="country" id="country">
+                {% for country in countries %}
+                    <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select>
+            <button id="search" type="submit">Search</button>
+        </form>
+    </div>
+{% endblock %}

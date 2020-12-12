@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search result
+{% endblock %}
+
+{% block body %}
+    <table>
+        <thead>
+            <tr>
+                <th>{{ city }}</th>
+                <th>Temperature</th>
+                <th>Max Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for date, temps in weathers.items() %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ temps[0] | round(2) }}°C</td>
+                <td>{{ temps[1] | round(2) }}°C</td>
+            </tr>
+            {% endfor %}
+            <tr class="averages">
+                <td>Avg Temperature</td>
+                <td>{{ avg_temp | round(2) }}°C</td>
+                <td>{{ avg_diff | round(2) }}°C</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
